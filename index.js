@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { leakMiddleware } from './middleware/leakMiddleware.js';
-import passport from 'passport';
 import userRoutes from './routes/userRoutes.js'
 
 dotenv.config();
