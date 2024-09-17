@@ -12,8 +12,8 @@ const app = express();
 
 // middlewares
 app.use(cors());
-app.use(express.json());    // parsing json requests
-app.use(leakMiddleware);    // custom middleware to prevent memory leak
+app.use(express.json());    
+app.use(leakMiddleware);    
 
 // Routes
 app.use('/api/users',userRoutes);
@@ -33,3 +33,6 @@ app.listen(PORT,()=>{
     console.log(`Server is listening to ${PORT}`);
     
 })
+
+
+// In this project, JWT and Passport are used together for authentication. JWT is generated upon login and is passed with each request to protected routes. Passport.js, through its JWT strategy, verifies the token and allows access to those routes if the token is valid. The protect middleware ensures that routes are secured, and the leakMiddleware demonstrates how to manage potential memory leaks in a Node.js application.

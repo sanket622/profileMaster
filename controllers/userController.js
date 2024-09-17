@@ -28,7 +28,7 @@ export const loginUser = async (req, res) => {
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ message: 'Invalid credentials' });
-
+    // This line generates a JWT token for a user. The token contains the user’s ID (user._id) and is signed with a secret key (JWT_SECRET). The token is set to expire in 1 hour ('1h'), after which it will no longer be valid for authentication.
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
     res.json({ token });
   } catch (error) {
