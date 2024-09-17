@@ -26,7 +26,7 @@ console.log("Mongodb Connection is successful");
 
 })
 app.get('/',(req,res)=>{
-    res.send("Hi I am practicing Node.js")
+    res.send("Welcome to my Profile Master API")
 })
 
 app.listen(PORT,()=>{
