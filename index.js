@@ -26,7 +26,7 @@ console.log("Mongodb Connection is successful");
 
 })
 app.get('/',(req,res)=>{
-    res.send("Welcome to my Profile Master API")
+    res.send("Welcome to the Profile master API ")
 })
 
 app.listen(PORT,()=>{
